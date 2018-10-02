@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MetersToInches</string>
+    <string name="convert">Convert</string>
+    <string name="enter_meters">Enter Meters</string>
+</resources>
