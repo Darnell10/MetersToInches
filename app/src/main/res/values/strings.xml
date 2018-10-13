@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MetersToInches</string>
-    <string name="convert">Convert</string>
+    <string name="convert">Meters to Inches</string>
     <string name="enter_meters">Enter Meters</string>
     <string name="error_message">Please enter valid number</string>
 </resources>

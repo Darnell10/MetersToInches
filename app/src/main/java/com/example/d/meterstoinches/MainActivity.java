@@ -22,8 +22,11 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.meters_entry)
     EditText metersEntery;
 
-    @BindView(R.id.convert_button)
-    Button convertButton;
+    @BindView(R.id.convert_button_toInches)
+    Button convertButton1;
+
+    @BindView(R.id.convert_button_toMeters)
+    Button convertButton2;
 
     @BindView(R.id.result_text)
     TextView resultText;
@@ -35,12 +38,13 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        convertButton.setOnClickListener(new View.OnClickListener() {
+
+        convertButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //conversion logic
 
-                double muliply = 39.37;
+                //conversion logic
+                double multiply = 39.37;
                 double result = 0.0;
 
                 if (metersEntery.getText().toString().equals("")) {
@@ -51,12 +55,39 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     //converts numbers entered to doubles
                     double meterValue = Double.parseDouble(metersEntery.getText().toString());
-                    result = meterValue * muliply;
+                    result = meterValue * multiply;
 
                     //converts to string
                     //resultText.setText(Double.toString(result) + " inches ");
                     resultText.setTextColor(Color.DKGRAY);
                     resultText.setText(String.format("%.2f", result));
+
+                }
+            }
+        });
+
+        convertButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //conversion logic
+                double divide = 39.37;
+                double result2 = 0.0;
+
+                if (metersEntery.getText().toString().equals("")) {
+                    //set error message if no value is entered
+                    resultText.setText(R.string.error_message);
+                    //sets color or error message
+                    resultText.setTextColor(Color.RED);
+                } else {
+                    //converts numbers entered to doubles
+                    double inchesValue = Double.parseDouble(metersEntery.getText().toString());
+                    result2 = inchesValue / divide;
+
+                    //converts to Sting
+                    resultText.setTextColor(Color.DKGRAY);
+                    resultText.setText(String.format("%.2f",result2));
+
 
                 }
             }
